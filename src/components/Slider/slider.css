@@ -1,0 +1,32 @@
+.movieSlider {
+  position: relative;
+}
+.movieSlider__blackLyer {
+  transition: all 0.3s ease-in-out;
+}
+.movieSlider__blackLyer:hover {
+  opacity: 0.75;
+}
+
+.movieSwiper .swiper-button-prev.movieSlider__arrows,
+.movieSwiper .swiper-button-next.movieSlider__arrows {
+  z-index: 1;
+}
+.movieSwiper .swiper-button-prev.movieSlider__arrows > svg,
+.movieSwiper .swiper-button-next.movieSlider__arrows > svg {
+  flex-shrink: 0;
+}
+.movieSwiper .swiper-button-prev:not(.movieSlider__arrows),
+.movieSwiper .swiper-button-next:not(.movieSlider__arrows) {
+  opacity: 0;
+  z-index: 2;
+}
+
+.swiper-button-next:after,
+.swiper-rtl .swiper-button-prev:after {
+  content: "";
+}
+.swiper-button-prev:after,
+.swiper-rtl .swiper-button-next:after {
+  content: "";
+}
