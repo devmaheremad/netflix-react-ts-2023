@@ -33,8 +33,6 @@ const Slider = ({ title, requestLink }: sliderPropsTypes) => {
     }
   }
 
-  console.log(finalRes);
-
   return (
     <>
       <Typography

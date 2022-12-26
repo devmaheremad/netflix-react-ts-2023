@@ -30,4 +30,5 @@ export const moviesToNotShow = [
   "Piggy",
   "Avatar",
   "My Name Is Vendetta",
+  "The Chronicles of Narnia: The Lion, the Witch and the Wardrobe",
 ];
