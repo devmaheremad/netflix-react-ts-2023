@@ -14,6 +14,7 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "./slider.css";
+import { moviesToNotShow } from "../../constants/constants";
 
 const Slider = ({ title, requestLink }: sliderPropsTypes) => {
   const [movies, setMovies] = useState<[moviePropsTypes]>([
@@ -22,6 +23,17 @@ const Slider = ({ title, requestLink }: sliderPropsTypes) => {
   useEffect(() => {
     axios.get(requestLink).then((res) => setMovies(res.data.results));
   }, [requestLink]);
+
+  // Films without girls photos, cuz on my crush
+  let finalRes: [moviePropsTypes] = [{} as moviePropsTypes];
+
+  for (let i = 0; i < movies.length; i++) {
+    if (!moviesToNotShow.includes(movies[i].title)) {
+      finalRes.push(movies[i]);
+    }
+  }
+
+  console.log(finalRes);
 
   return (
     <>
@@ -82,12 +94,14 @@ const Slider = ({ title, requestLink }: sliderPropsTypes) => {
             />
           </svg>
         </Box>
-        {movies.map((movie, index) => {
-          return (
-            <SwiperSlide className="movieSlider max-w-300px" key={index}>
-              <Movie movie={movie} />
-            </SwiperSlide>
-          );
+        {finalRes.map((movie, index) => {
+          if (index >= 1) {
+            return (
+              <SwiperSlide className="movieSlider max-w-300px" key={index}>
+                {movie.backdrop_path && <Movie movie={movie} />}
+              </SwiperSlide>
+            );
+          }
         })}
       </Swiper>
     </>

@@ -124,10 +124,6 @@ const Signup = () => {
           >
             Sign up
           </Button>
-          <FormControlLabel
-            control={<Checkbox sx={{ pr: 2 }} />}
-            label="Remember me?"
-          />
         </form>
         <Stack
           mt={4}

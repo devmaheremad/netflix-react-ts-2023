@@ -2,18 +2,31 @@ import { Box, Button, Typography } from "@mui/material";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import moviesRequest from "../api/moviesRequest";
+import { moviesToNotShow } from "../constants/constants";
 import { moviePropsTypes } from "../types/HeroHeader.types";
 
 const HeroHeader = () => {
   const [movies, setMovies] = useState<[moviePropsTypes]>([
     {} as moviePropsTypes,
   ]);
-  const movie = movies[Math.floor(Math.random() * movies.length)];
   useEffect(() => {
     axios
-      .get(moviesRequest[2].requestLink)
+      .get(
+        moviesRequest[Math.floor(Math.random() * moviesRequest.length)]
+          .requestLink
+      )
       .then((res) => setMovies(res.data.results));
   }, []);
+
+  // Films without girls photos, cuz on my crush
+  let finalRes: [moviePropsTypes] = [{} as moviePropsTypes];
+
+  for (let i = 0; i < movies.length; i++) {
+    if (!moviesToNotShow.includes(movies[i].title)) {
+      finalRes.push(movies[i]);
+    }
+  }
+  const movie = finalRes[Math.floor(Math.random() * finalRes.length)];
 
   const { title, overview, release_date } = movie;
   return (

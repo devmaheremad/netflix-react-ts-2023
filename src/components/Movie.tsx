@@ -61,7 +61,12 @@ const Movie = ({ movie }: MoviePropsType) => {
         justifyContent={"center"}
         alignItems={"center"}
       >
-        <Typography fontWeight={"bold"} variant="body2" color="white">
+        <Typography
+          fontWeight={"bold"}
+          variant="body2"
+          color="white"
+          textAlign={"center"}
+        >
           {title}
         </Typography>
 
