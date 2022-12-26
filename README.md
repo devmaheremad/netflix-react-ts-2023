@@ -1,6 +1,6 @@
 # **Netflix-react-ts-2023 Project**
 
-###### ![Netflix-react-ts-2023 home page](https://i.ibb.co/CPhcGtk/localhost-3000.png)
+###### ![Netflix-react-ts-2023 home page](https://devmaheremad.github.io/netflix-react-ts-2023/)
 
 ###### [Watch it here live](https://devmaheremad.github.io/nearby/)
 
