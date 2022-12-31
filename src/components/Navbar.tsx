@@ -105,7 +105,7 @@ const Navbar = () => {
                 height: { xs: "90px", sm: "120px" },
               }}
             >
-              <Link to="/" className="align-items-center">
+              <Link to="/netflix-react-ts-2023" className="align-items-center">
                 <svg
                   width={200}
                   height={55}
