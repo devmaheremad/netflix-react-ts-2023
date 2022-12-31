@@ -2,8 +2,6 @@ import {
   Alert,
   Box,
   Button,
-  Checkbox,
-  FormControlLabel,
   Stack,
   TextField,
   Typography,
@@ -26,7 +24,7 @@ const Signup = () => {
     try {
       await signUp(email, password);
       setDocs(email, password);
-      navigate("/");
+      navigate("/netflix-react-ts-2023");
     } catch (error: any) {
       setError(error.message);
     }

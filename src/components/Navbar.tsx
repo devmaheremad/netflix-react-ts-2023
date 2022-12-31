@@ -24,7 +24,7 @@ const Navbar = () => {
   const handleLogout = async () => {
     try {
       await logOut();
-      navigate("/");
+      navigate("/netflix-react-ts-2023");
     } catch (error) {
       // console.log(error);
     }

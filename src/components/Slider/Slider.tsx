@@ -99,6 +99,8 @@ const Slider = ({ title, requestLink }: sliderPropsTypes) => {
                 {movie.backdrop_path && <Movie movie={movie} />}
               </SwiperSlide>
             );
+          } else {
+            return null;
           }
         })}
       </Swiper>

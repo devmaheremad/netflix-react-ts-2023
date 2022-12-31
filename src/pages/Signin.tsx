@@ -25,7 +25,7 @@ const Signin = () => {
     setError("");
     try {
       await logIn(email, password);
-      navigate("/");
+      navigate("/netflix-react-ts-2023");
     } catch (error: any) {
       setError(error.message);
     }
